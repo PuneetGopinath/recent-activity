@@ -31,7 +31,7 @@ Toolkit.run(
       // Filter out any boring activity
       .filter((event) => serializers.hasOwnProperty(event.type));
 
-    let content = filterContent(eventData);
+    let content = filterContent(eventData, tools);
 
     let readmeContent;
 

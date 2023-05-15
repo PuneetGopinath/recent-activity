@@ -7,7 +7,7 @@ const serializers = require("../serializers");
 const { max_lines, ignored_repos, disabled_events } = require("../config");
 const { amountReplace } = require("./amountReplacer");
 
-const filterContent = (eventData) => {
+const filterContent = (eventData, tools) => {
   let temp_content = [];
 
   // ignore the repos passed in the configuration
@@ -50,6 +50,7 @@ const filterContent = (eventData) => {
       ) {
         return false;
       } else {
+        tools.debug.log((event.payload));
         return true;
       }
     });
