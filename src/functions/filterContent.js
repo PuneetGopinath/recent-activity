@@ -50,7 +50,7 @@ const filterContent = (eventData, tools) => {
       ) {
         return false;
       } else {
-        tools.debug.log((event.payload));
+        tools.debug.log(event.payload);
         return true;
       }
     });
