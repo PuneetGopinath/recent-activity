@@ -93,7 +93,7 @@ Toolkit.run(
       try {
         await commitFile();
       } catch (err) {
-        tools.log.debug("Something went wrong");
+        tools.log.debug("Something went wrong while commiting file");
         return tools.exit.failure(err);
       }
       tools.exit.success("Wrote to README");
@@ -128,7 +128,7 @@ Toolkit.run(
     try {
       await commitFile();
     } catch (err) {
-      tools.log.debug("Something went wrong");
+      tools.log.debug("Something went wrong while commiting file");
       return tools.exit.failure(err);
     }
     tools.exit.success("Pushed to remote repository");

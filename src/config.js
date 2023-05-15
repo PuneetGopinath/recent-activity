@@ -61,11 +61,13 @@ try {
       if (!conf.whitelisted_events.includes(event)) {
         let e = event.trim().toLowerCase();
         if (e == "pr") {
+          disabled.push("pr");
           disabled.push("pr_open");
           disabled.push("pr_close");
           disabled.push("pr_merge");
         }
         if (e == "issues") {
+          disabled.push("issues");
           disabled.push("issues_open");
           disabled.push("issues_close");
         }
