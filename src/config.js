@@ -59,12 +59,32 @@ try {
   if (conf.whitelisted_events) {
     eventList.forEach((event) => {
       if (!conf.whitelisted_events.includes(event)) {
-        disabled.push(event.trim().toLowerCase());
+        let e = event.trim().toLowerCase();
+        if (e == "pr") {
+          disabled.push("pr_open");
+          disabled.push("pr_close");
+          disabled.push("pr_merge");
+        }
+        if (e == "issues") {
+          disabled.push("issues_open");
+          disabled.push("issues_close");
+        }
+        disabled.push(e);
       }
     });
   } else if (conf.disabled_events) {
     conf.disabled_events.forEach((event) => {
-      disabled.push(event.trim().toLowerCase());
+      let e = event.trim().toLowerCase();
+      if (e == "pr") {
+        disabled.push("pr_open");
+        disabled.push("pr_close");
+        disabled.push("pr_merge");
+      }
+      if (e == "issues") {
+        disabled.push("issues_open");
+        disabled.push("issues_close");
+      }
+      disabled.push(e);
     });
   }
 } catch (e) {
